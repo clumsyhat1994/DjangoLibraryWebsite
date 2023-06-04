@@ -13,6 +13,10 @@ def index(request):
         status__exact='a').count()
 
     num_authors = Author.objects.count()
+
+    num_visits = request.session.get('num_visits', 0)
+    request.session['num_visits'] = num_visits + 1
+
     num_books_contain_less = Book.objects.filter(
         title__contains='less').count()
 
@@ -22,6 +26,7 @@ def index(request):
         'num_instances_available':  num_instances_available,
         'num_authors': num_authors,
         'num_less': num_books_contain_less,
+        'num_visits': num_visits,
     }
 
     return render(request, 'index.html', context=context)
