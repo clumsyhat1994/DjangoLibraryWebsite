@@ -343,5 +343,5 @@ class RenewBookInstancesViewTest(TestCase):
         response = self.client.post(reverse('renew-book-librarian', kwargs={
                                     'pk': self.test_bookinstance1.pk}), {'renewal_date': invalid_date_in_future})
         self.assertEqual(response.status_code, 200)
-        self.assertFormError(response, '', 'renewal_date',
+        self.assertFormError(response, 'form', 'renewal_date',
                              'Invalid date - renewal more than 4 weeks ahead')
