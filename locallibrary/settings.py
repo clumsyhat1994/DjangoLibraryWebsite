@@ -31,7 +31,7 @@ DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 # ALLOWED_HOSTS = ['djangolibrarywebsite-production.u.railway.app']
 
 ALLOWED_HOSTS = [
-    'djangolibrarywebsite-production.up.railway.app', '.railway.com', '127.0.0.1']
+    'djangolibrarywebsite-production.up.railway.app', '.railway.com']
 
 CSRF_TRUSTED_ORIGINS = [
     'https://djangolibrarywebsite-production.up.railway.app']
